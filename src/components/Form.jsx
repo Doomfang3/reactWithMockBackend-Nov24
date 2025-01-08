@@ -1,3 +1,4 @@
+import { meta } from '@eslint/js'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,7 +12,7 @@ const Form = ({ player, isUpdate = false }) => {
     const newPlayer = { firstname }
     try {
       const response = await fetch(
-        `http://localhost:4000/players${isUpdate ? `/${player.id}` : ''}`,
+        `${import.meta.env.VITE_API_URL}/players${isUpdate ? `/${player.id}` : ''}`,
         {
           method: isUpdate ? 'PUT' : 'POST',
           headers: {

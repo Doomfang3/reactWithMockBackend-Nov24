@@ -7,7 +7,7 @@ const Homepage = () => {
   // A way to get our players
   async function fetchPlayers() {
     try {
-      const response = await fetch('http://localhost:4000/players')
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/players`)
       if (response.ok) {
         const playersData = await response.json()
         setPlayers(playersData)

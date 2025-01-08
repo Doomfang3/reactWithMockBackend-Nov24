@@ -9,7 +9,7 @@ const UpdatePlayer = () => {
 
   async function fetchSinglePlayer() {
     try {
-      const response = await fetch(`http://localhost:4000/players/${playerId}`)
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/players/${playerId}`)
       if (response.ok) {
         const singlePlayerData = await response.json()
         setFirstname(singlePlayerData.firstname)
